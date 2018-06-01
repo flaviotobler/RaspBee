@@ -32,5 +32,5 @@ if (sensorValue != sensorValueOld)
 }
 else{Serial.println("");}
 
-delay(4000);                                   // wait 600000ms for next reading
+delay(10000);                                   // wait 600000ms for next reading
 }
