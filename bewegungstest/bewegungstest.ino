@@ -53,9 +53,9 @@ void setup(){
   digitalWrite(pirPin, LOW);
 
   //give the sensor some time to calibrate
-  Serial.print("calibrating sensor ");
+  Serial.println("calibrating sensor ");
     for(int i = 0; i < calibrationTime; i++){
-      Serial.print(".");
+      Serial.println(".");
       delay(1000);
       }
     Serial.println(" done");
@@ -66,14 +66,14 @@ void setup(){
 ////////////////////////////
 //LOOP
 void loop(){
-     Serial.println(".");
-     delay(500);
+     Serial.println("B 0");
+     delay(2000);
      if(digitalRead(pirPin) == HIGH){
        digitalWrite(ledPin, HIGH);   //the led visualizes the sensors output pin state
        if(lockLow){  
          //makes sure we wait for a transition to LOW before any further output is made:
          lockLow = false;            
-         Serial.println("bewegen");
+         Serial.println("B 1");
          delay(50);
          }         
          takeLowTime = true;
